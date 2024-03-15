@@ -27,7 +27,7 @@ describe('GET /', function () {
         if (err) {
           return done(err);
         }
-        chai.assert.isTrue(res.text.includes("Demo</h1>"));
+        chai.assert.isTrue(res.text.includes("Svc</h1>"));
         return done();
       });
 
