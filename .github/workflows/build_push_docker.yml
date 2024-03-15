@@ -2,9 +2,9 @@ name: build push docker
 on:
     workflow_call:
         secrets:
-             DOCKER_HUB_USERNAME:
+             hubID:
                  required: true
-             DOCKER_HUB_TOKEN:
+             hubTOKEN:
                  required: true
         
 jobs:
