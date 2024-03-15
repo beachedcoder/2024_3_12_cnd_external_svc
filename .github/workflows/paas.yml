@@ -8,6 +8,7 @@ jobs:
     uses: ./.github/workflows/node_test.yaml
   call-workflow-build-push-docker:
     uses: ./.github/workflows/build_push_docker.yml
+    needs: call-workflow-build-test
     secrets:
       hubID: ${{ secrets.DOCKER_HUB_USERNAME }}
       hubTOKEN: ${{ secrets.DOCKER_HUB_TOKEN }}
