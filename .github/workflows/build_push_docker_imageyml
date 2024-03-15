@@ -1,4 +1,5 @@
-  on:
+name: build push docker
+on:
     workflow_call:
   jobs:
     build_docker_image:
