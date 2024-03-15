@@ -7,4 +7,4 @@ jobs:
   call-workflow-build-test:
     uses: ./.github/workflows/node_test.yaml
   call-workflow-build-push-docker:
-    uses: ./.github/workflows/build_push_docker_imageyml
+    uses: ./.github/workflows/build_push_docker.yml
