@@ -12,3 +12,14 @@ jobs:
     secrets:
       hubID: ${{ secrets.DOCKER_HUB_USERNAME }}
       hubTOKEN: ${{ secrets.DOCKER_HUB_TOKEN }}
+  call-workflow-cloud-run-deploy:
+    uses: ./.github/workflows/cloudrun-docker.yml
+    needs: call-workflow-build-push-docker
+    with:
+      publishedImg: ${{ needs.call-workflow-build-push-docker.outputs.builtImgName }}
+    secrets:
+      gcpProject: ${{ secrets.GCP_PROJECT_ID }}
+      gcpSvcRegion: ${{ secrets.GCP_REGION }}
+      gcpSvcAccount: ${{ secrets.GCP_SVC_ACCOUNT }}
+      cloudRunDeployment: ${{ secrets.GCP_CLOUD_RUN_DEPLOYMENT }}
+      
