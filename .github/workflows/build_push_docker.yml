@@ -1,8 +1,6 @@
 name: build push docker
 on:
     workflow_call:
-        inputs:
-            tag:
         secrets:
              hubID:
                  required: true
